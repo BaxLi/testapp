@@ -1,9 +1,8 @@
-FROM node:16 As development
-ARG NODE_ENV=production
-ENV NODE_ENV=${NODE_ENV}
+FROM node:16 As production
+
 EXPOSE 8088
 #this is INSIDE DOCKER container where we hold the app !
-WORKDIR /usr/src/app
+WORKDIR /olanda/src/app
 
 COPY package*.json ./
 
