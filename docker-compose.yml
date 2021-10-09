@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  backendapi:
+    #image: backendapiolanda
+    build:
+      dockerfile: dockerfile
+      context: .
+    depends_on:
+      - mysql
+    environment:
+      DATABASE_URL: mysql://user:password@127.0.0.1:3306
+      NODE_ENV: development
+      PORT: 3000
+    ports:
+      - '8088:3000'
+  mysql:
