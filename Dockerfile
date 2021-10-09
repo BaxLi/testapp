@@ -1,4 +1,4 @@
-FROM node:12.13-alpine As development
+FROM node:16 As development
 
 #this is INSIDE DOCKER container where we hold the app !
 WORKDIR /usr/src/app
@@ -17,7 +17,7 @@ CMD [ "node", "dist/main" ]
 #-----------------------------------------------
 
 
-FROM node:12.13-alpine as production
+FROM node:16 as production
 
 ARG NODE_ENV=production
 ENV NODE_ENV=${NODE_ENV}
