@@ -13,7 +13,7 @@ RUN npm run build
 
 EXPOSE 8088
 
-CMD [ "node", "main" ]
+CMD [ "node", "dist/main" ]
 #-----------------------------------------------
 
 
